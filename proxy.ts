@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from 'next/server';
 const protectedPaths = ['/home', '/collection', '/wallet', '/profile'];
 const authPaths = ['/login', '/verify'];
 
-export function middleware(req: NextRequest) {
+export function proxy(req: NextRequest) {
   const session = req.cookies.get('ec_session')?.value;
   const { pathname } = req.nextUrl;
 
